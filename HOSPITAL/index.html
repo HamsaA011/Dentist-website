@@ -1,0 +1,542 @@
+<?php
+
+$conn = mysqli_connect('localhost','root','','contact_db') or die('connection failed');
+
+if(isset($_POST['submit'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $number = $_POST['number'];
+   $date = $_POST['date'];
+
+   $insert = mysqli_query($conn, "INSERT INTO `contact_form`(name, email, number, date) VALUES('$name','$email','$number','$date')") or die('query failed');
+
+   if($insert){
+      $message[] = 'appointment made successfully!';
+   }else{
+      $message[] = 'appointment failed';
+   }
+
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORAL DETAILED</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> <strong>ORAL DEATILED</strong>medical </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#services">services</a>
+        <a href="#doctors">doctors</a>
+        <a href="#appointment">appointment</a>
+        <a href="#review">review</a>
+        <a href="#blogs">blogs</a>
+        <a href="./kids zone/index1.html" target="_blank">kids zone</a>
+        <a href="">locate</a>
+    </nav>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="image">
+        <img src="./image/home-img.jpg" alt="">
+    </div>
+
+    <div class="content">
+        <h3>we take care of your healthy teeth</h3>
+        <p> A person who has good teeth is likely to have more confidence and processes working at their peak.</p>
+        <a href="#appointment" class="btn"> appointment us <span class="fas fa-chevron-right"></span> </a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- icons section starts  -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-user-md"></i>
+        <h3>150+</h3>
+        <p>doctors at work</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-users"></i>
+        <h3>1030+</h3>
+        <p>satisfied patients</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-procedures"></i>
+        <h3>24/7</h3>
+        <p>availability</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-hospital"></i>
+        <h3>70+</h3>
+        <p>available hospitals</p>
+    </div>
+
+</section>
+
+<!-- icons section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>about</span> us </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="./image/about-img.svg" alt="">
+        </div>
+
+        <div class="content">
+            <h3>take the world's best quality treatment</h3>
+            <p>Be true to your teeth and they won’t be false to you!. The toothbrush doesn’t remove six months of tartar 30 minutes before your dental appointment!. Dentistry is not expensive…..neglect is!
+            You don’t have to brush your teeth –just the ones you want to keep!
+            One of the major health concerns for various countries is an oral disease. It has a negative impact on people throughout their lives. Oral diseases lead to pain and discomfort, social isolation, and a loss of self-confidence. They are also often linked to other serious health issues. Therefore, people should not suffer. Most oral health conditions are largely preventable and can be treated in their early stages. </p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- services section starts  -->
+
+<section class="services" id="services">
+
+    <h1 class="heading"> our <span>services</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-notes-medical"></i>
+            <h3>free checkups</h3>
+            <p>We offer free checkups to our regular patients and we offer spealised children dentis to take care of our beloved young patients.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-ambulance"></i>
+            <h3>24/7 availability</h3>
+            <p>In case of any emergencies, we are here to help assist our patients 24/7</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-user-md"></i>
+            <h3>expert doctors</h3>
+            <p>All the doctors are much experienced and some have the experience to deal with young and aged patients.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-pills"></i>
+            <h3>medicines</h3>
+            <p>All the medicines prescribed will be available in our pharmacy and there is need for the patients to search more on it. If needed medicines are home delivered by our incharge team.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-procedures"></i>
+            <h3>children ward</h3>
+            <p>children should be handled with care, hence we have created the ambience where children get more comfortaable to interact with the dentist.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-heartbeat"></i>
+            <h3>total care</h3>
+            <p>we provide any type of dental treaatment from root canal to teeth replacements.</p>
+            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- services section ends -->
+
+
+
+<!-- doctors section starts  -->
+
+<section class="doctors" id="doctors">
+
+    <h1 class="heading"> our <span>doctors</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="image/doc-1.jpg" alt="">
+            <h3>dr.anna</h3>
+            <span>children specialist</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+                
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-2.jpg" alt="">
+            <h3>dr.mugilan</h3>
+            <span>endodontist</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-3.jpg" alt="">
+            <h3>dr.riya d'souza</h3>
+            <span>periodontist</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-4.jpg" alt="">
+            <h3>dr.shreya srinivasa</h3>
+            <span>oral surgeon</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-5.jpg" alt="">
+            <h3>dr.franco martin</h3>
+            <span>Dental hygienist</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-6.jpg" alt="">
+            <h3>dr.tesla willson</h3>
+            <span>oral and maxillofacial pathologist</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/doc-7.jpg" alt="">
+            <h3>dr.nirmala</h3>
+            <span>orthodontics </span>
+            <div class="share">
+                
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/doc-8.jpg" alt="">
+            <h3>dr.srinivasa</h3>
+            <span> prosthodontist</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="image/doc-9.jpg" alt="">
+            <h3>dr.jacob william</h3>
+            <span>jr.assistant  prosthodontist</span>
+            <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- doctors section ends -->
+
+<!-- appointmenting section starts   -->
+
+<section class="appointment" id="appointment">
+
+    <h1 class="heading"> <span>appointment</span> now </h1>    
+
+    <div class="row">
+
+        <div class="image">
+            <img src="image/appointment-img.svg" alt="">
+        </div>
+     <form action="insert.php" method="post">     
+        <?php
+            if(isset($message)) {
+                foreach($message as $message) {
+                echo'<p class ="message">'.$message.'</p>';
+            }
+            }
+        ?
+        <table>
+            <tr>
+            <h3>make appointment</h3>
+        </tr>
+        <tr>
+            <td><input type="text"name="username" placeholder="your name" class="box"></td>
+        </tr>
+        <tr>
+            <td><input type="number"name="number" placeholder="your number" class="box"></td>
+        </tr>
+        <tr>
+            <td><input type="email"name="email" placeholder="your email" class="box"></td>
+        </tr>
+        <tr>
+            <td><input type="date"name="date" class="box"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="submit" value="appointment now" class="btn"></td>
+        </tr>
+        </table>
+        </form>
+
+    </div>
+
+</section>
+
+<!-- appointmenting section ends -->
+
+<!-- review section starts  -->
+
+<section class="review" id="review">
+    
+    <h1 class="heading"> client's <span>review</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="image/pic-1.jpg" alt="">
+            <h3>naman jain</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">Such a fine job done....very professional and so happy with the final product. Thank you Dr malathi for making a dentist experience such a pleasant one...</p>
+        </div>
+
+        <div class="box">
+            <img src="image/pic-1.jpg" alt="">
+            <h3>Sanjeet Kumar</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">Dr. Riya is gentle, honest and highly skilled . She has given me correct recommendation about treatment . She believes in ethical earning . She is very cooperative too . Overall, I had wonderful experience.
+
+            </p>
+        </div>
+
+        <div class="box">
+            <img src="image/pic-1.jpg" alt="">
+            <h3>dilly fernandis</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text">it was a very good experience. Environment friendly and very professional treatment. make us to smile again. will visit once again for further treatment.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- review section ends -->
+
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+
+    <h1 class="heading"> our <span>blogs</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="image">
+                <img src="image/blog-1.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href="https://www.dentalhealth.org/blog/oral-health-and-socioeconomic-inequalities" target="_blank"> <i class="fas fa-calendar">click</i> 21 november, 2022 </a>
+                    <a href="#"> <i class="fas fa-user"></i> shiffa </a>
+                </div>
+                <h3>dental health</h3>
+                <p>Many factors can influence our life: where we go to school, what friends we make, and even the opportunities we have in life.However, one of the things we don’t usually think about is how our socioeconomic status - the combination of our income, occupation, and social background - can affect our dental health.</p>
+                <a href="" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+        </div>
+
+        
+
+        <div class="box">
+            <div class="image">
+                <img src="image/blog-3.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href="http://goaskfred.com/tag/dental-practice-management/"target="_blank"> <i class="fas fa-calendar">click</i> 3 february, 2022 </a>
+                    <a href="#"> <i class="fas fa-user"></i> fred joyal </a>
+                </div>
+
+                <h3>persuing dental</h3><p>Mark Johnson, founder of StudentLoansRx, gives the best ways to approach the refinancing of your student loans, and how to strategize all your debt in the proper order. If you have student debt, you need a plan, and Mark explains what you need to be thinking about.</p>
+                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+        </div>
+        
+        <div class="box">
+            <div class="image">
+                <img src="image/blog-6.jpg" alt="">
+            </div>
+            <div class="content">
+                <div class="icon">
+                    <a href="http://www.lspindeldds.com/askdr/"target="_blank"> <i class="fas fa-calendar">click</i> 1 august, 2022 </a>
+                    <a href="#"><i class="fas fa-user"></i> Dr. Spindel </a>
+                </div>
+                <h3>Mouth Healthy</h3>
+                <p>here are a number of factors that contribute to developing a successful  dental practice. Dentists  need to  develop their clinical skills, leadership ability,  treatment planning ability and also  their salesmanship. In addition successful dental practices need  a sufficient number of active patients who continue to return for treatments year after year .</p>
+                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- blogs section ends -->
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#home"> <i class="fas fa-chevron-right"></i> home </a>
+            <a href="#about"> <i class="fas fa-chevron-right"></i> about </a>
+            <a href="#services"> <i class="fas fa-chevron-right"></i> services </a>
+            <a href="#doctors"> <i class="fas fa-chevron-right"></i> doctors </a>
+            <a href="#appointment"> <i class="fas fa-chevron-right"></i> appointment </a>
+            <a href="#review"> <i class="fas fa-chevron-right"></i> review </a>
+            <a href="#blogs"> <i class="fas fa-chevron-right"></i> blogs </a>
+        </div>
+
+        <div class="box">
+            <h3>our services</h3>
+            <a href="#"> <i class="fas fa-chevron-right"></i> dental care </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> children specialization </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> gap filling </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> diagnosis </a>
+            <a href="#"> <i class="fas fa-chevron-right"></i> 24/7 service </a>
+        </div>
+
+        <div class="box">
+            <h3>appointment info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +9101688238801 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +9101782546978 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> hamsanarayana11@gmail.com </a>
+            <a href="#"> <i class="fas fa-envelope"></i> oraldetailed0101@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> bengaluru, india </a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-faceappointment-f"></i> faceappointment </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+        </div>
+
+    </div>
+
+    <div class="credit"> created by <span>hamsa</span> | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+<!-- js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
