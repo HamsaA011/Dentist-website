@@ -1,1 +1,1 @@
-# Dentist-website
+This is a dental website, which is mainly focused on the details of the doctors, has a play zone where kids can play and also learn the importance of visiting dentist and an application form where the data is stored in the database.
